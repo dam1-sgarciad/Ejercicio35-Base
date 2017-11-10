@@ -125,7 +125,7 @@ public class VentanaPrincipal {
 		
 		panelImagen.setLayout(new GridLayout(1,1));
 		JLabel imagen=new JLabel();
-		imagen.setBounds(20,20,20,20);
+		imagen.setBounds(50,50,50,50);
 		imagen.setHorizontalAlignment(SwingConstants.CENTER);
 		try {
 			BufferedImage img=ImageIO.read(new File("buscaminas.png"));
@@ -166,8 +166,11 @@ public class VentanaPrincipal {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ventana.removeAll();
 				ventana.setVisible(false);
+				ventana=new JFrame();
+				ventana.setBounds(100, 100, 700, 500);
+				ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				juego = new ControlJuego();
 				inicializar();
 			}
 		});
