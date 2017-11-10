@@ -125,9 +125,10 @@ public class VentanaPrincipal {
 		
 		panelImagen.setLayout(new GridLayout(1,1));
 		JLabel imagen=new JLabel();
+		imagen.setBounds(20,20,20,20);
 		imagen.setHorizontalAlignment(SwingConstants.CENTER);
 		try {
-			BufferedImage img=ImageIO.read(new File("buscaminas.jpg"));
+			BufferedImage img=ImageIO.read(new File("buscaminas.png"));
 			ImageIcon icon=new ImageIcon(img.getScaledInstance(imagen.getWidth(),imagen.getHeight(), Image.SCALE_SMOOTH));
 			imagen.setIcon(icon);
 			panelImagen.add(imagen);
@@ -246,10 +247,10 @@ public class VentanaPrincipal {
 	 */
 	public void mostrarFinJuego(boolean porExplosion) {
 		if (porExplosion == true) {
-			JOptionPane.showConfirmDialog(ventana, "GAME OVER");
+			JOptionPane.showMessageDialog(ventana, "GAME OVER");
 		} else {
 			if (porExplosion == false) {
-				JOptionPane.showConfirmDialog(ventana, "HAS GANADO :D");
+				JOptionPane.showMessageDialog(ventana, "HAS GANADO :D");
 			}
 		}
 	}
